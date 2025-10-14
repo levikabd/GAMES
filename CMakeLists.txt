@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10.0)
-project(NCUR VERSION 0.1.0 LANGUAGES C CXX)
+project(GAMES VERSION 0.1.0 LANGUAGES C CXX)
 
 
-add_executable(NCUR main.cpp)
+add_executable(GAMES main.cpp gwindow.cpp)
 
 set(CURSES_HAVE_NCURSES_H TRUE)
 set(CURSES_NEED_NCURSES TRUE)

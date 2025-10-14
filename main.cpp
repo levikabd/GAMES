@@ -1,11 +1,18 @@
-#include <ncurses.h>
+#include <vector>
+#include <string>
+
+#include "gwindow.h"
+
 
 int main()
 {
-    initscr();                   // Переход в curses-режим
-    printw("Hello world!\n");  // Отображение приветствия в буфер
-    refresh();                   // Вывод приветствия на настоящий экран
-    getch();                     // Ожидание нажатия какой-либо клавиши пользователем
-    endwin();                    // Выход из curses-режима. Обязательная команда.
-    return 0;
+    std::vector<std::string> listG;
+    listG.push_back("Tank");
+    listG.push_back("x / 0");
+    listG.push_back("Fly");
+    listG.push_back("EXIT");
+
+    int res = gwin(listG);
+
+    return res;
 }
