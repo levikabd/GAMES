@@ -12,6 +12,8 @@ int gwin(std::vector<std::string> listG)
     cbreak();          // режим без буферизации
     noecho();         // не отображать вводимые символы
 
+    setlocale(LC_ALL, "");
+
     int choice = 0;
     while(choice!='3')
     {
@@ -21,21 +23,22 @@ int gwin(std::vector<std::string> listG)
         printw("2. Save\n");
         printw("3. EXIT\n");
         //refresh();
-
-        choice = getch();
-        printw("pressed key: \n", choice);
+        
+        printw("pressed key: \n");
         if (choice=='1')
         {
-            printw("Выбран пункт 1\n");
+            printw("Item 1 is selected\n");
         }else if (choice=='2')
         {
-            printw("Выбран пункт 2\n");
+            printw("Item 2 is selected\n");
         }else if (choice=='3')
         {
-            printw("Выход из программы\n");
+            printw("EXIT \n");
 //        } else{
         };
+
         refresh();
+        choice = getch();
     };
 
 
@@ -66,7 +69,7 @@ int gwin(std::vector<std::string> listG)
     // printw("Нажата клавиша: %c\n", key);
     // refresh();
 
-    getch();
+    //getch();
 
     endwin();                    // Выход из curses-режима. Обязательная команда.
 
