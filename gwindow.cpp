@@ -43,11 +43,11 @@ int gwin(std::vector<std::string> listG)
     {
         wattron(win, COLOR_PAIR(1));
         clear();
-        // printw("MENU:\n");
-        // printw("1. Open the file\n");
-        // printw("2. Save\n");
-        // printw("3. EXIT\n");
+       
         mvwprintw(win, 2, 2, "MENU:\n");
+        mvwprintw(win, 4, 2, "1. Open the file\n");
+        mvwprintw(win, 6, 2, "2. Save\n");
+        mvwprintw(win, 8, 2, "3. EXIT\n");
         mvwprintw(win, 4, 2, "1. Open the file\n");
         mvwprintw(win, 6, 2, "2. Save\n");
         mvwprintw(win, 8, 2, "3. EXIT\n");
@@ -71,9 +71,8 @@ int gwin(std::vector<std::string> listG)
         
         mvwprintw(win, 14, 2, "Red TEXT!");
         wattroff(win, COLOR_PAIR(1));
+        box(win, 0, 0); 
 
-        box(win, 0, 0);
-     
         refresh();
         wrefresh(win); 
         choice = getch();
