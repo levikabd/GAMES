@@ -9,6 +9,9 @@
 #include <thread>
 #include <chrono>
 
+#include <thread>
+#include <chrono>
+
 int welcome()
 {
     // Инициализация ncurses
@@ -36,7 +39,7 @@ int welcome()
     
     // Текст для вывода
     const char *text = "WELCOME!";
-    const char *subtitle = " The window - ncurses.";
+    const char *subtitle = "These are toys on ncurses.";
 
     // Выводим текст по центру окна
     mvwprintw(win, 2, (width - strlen(text)) / 2, text);
@@ -44,6 +47,7 @@ int welcome()
     
     wrefresh(win); 
 
+    //getch();
     std::this_thread::sleep_for(std::chrono::seconds(3));
 
     delwin(win);

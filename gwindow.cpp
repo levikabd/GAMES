@@ -31,8 +31,8 @@ int gwin(std::vector<std::string> listG)
 
     WINDOW *win = newwin(height, width, start_y, start_x);
     //WINDOW *win = newwin(60, 80, 5, 5); // высота, ширина, y, x
-    box(win, 0, 0);                     // рамка вокруг окна
-    box(win, 2, 2);                     // рамка вокруг окна
+    //box(win, 0, 0);                     // рамка вокруг окна
+    //box(win, 2, 2);                     // рамка вокруг окна
 
     //start_color();                     // инициализация цветов
     //init_pair(1, COLOR_RED, COLOR_BLACK);
@@ -41,42 +41,43 @@ int gwin(std::vector<std::string> listG)
     int choice = 0;
     while(choice!='3')
     {
+        wattron(win, COLOR_PAIR(1));
         clear();
         // printw("MENU:\n");
         // printw("1. Open the file\n");
         // printw("2. Save\n");
         // printw("3. EXIT\n");
         mvwprintw(win, 2, 2, "MENU:\n");
-        mvwprintw(win, 2, 2, "1. Open the file\n");
-        mvwprintw(win, 2, 2, "2. Save\n");
-        mvwprintw(win, 2, 2, "3. EXIT\n");
+        mvwprintw(win, 4, 2, "1. Open the file\n");
+        mvwprintw(win, 6, 2, "2. Save\n");
+        mvwprintw(win, 8, 2, "3. EXIT\n");
+        //refresh();
         
-        //printw("pressed key: \n");
-        mvwprintw(win, 2, 2, "Pressed key: \n");
+        mvwprintw(win, 10, 2, "Pressed key: \n");
         if (choice=='1')
         {
             //printw("Item 1 is selected\n");
-            mvwprintw(win, 2, 2, "Item 1 is selected\n");
+            mvwprintw(win, 12, 2, "Item 1 is selected\n");
         }else if (choice=='2')
         {
             //printw("Item 2 is selected\n");
-            mvwprintw(win, 2, 2, "Item 2 is selected\n");
+            mvwprintw(win, 12, 2, "Item 2 is selected\n");
         }else if (choice=='3')
         {
             //printw("EXIT \n");
-            mvwprintw(win, 2, 2, "EXIT \n");
+            mvwprintw(win, 12, 2, "EXIT \n");
 //        } else{
         };
-
         
-        mvwprintw(win, 4, 2, "RED TEXT!");
-        //wattroff(win, COLOR_PAIR(1));
+        mvwprintw(win, 14, 2, "Red TEXT!");
+        wattroff(win, COLOR_PAIR(1));
 
+        box(win, 0, 0);
+     
         refresh();
         wrefresh(win); 
         choice = getch();
     };
-
 
     //getch();
     delwin(win);
