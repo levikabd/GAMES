@@ -9,9 +9,6 @@
 #include <thread>
 #include <chrono>
 
-#include <thread>
-#include <chrono>
-
 int welcome()
 {
     // Инициализация ncurses
