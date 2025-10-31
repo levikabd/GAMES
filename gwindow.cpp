@@ -22,8 +22,8 @@ int gwin(std::vector<std::string> listG)
     setlocale(LC_ALL, "");
 
     // Размеры окна
-    const int width = 40;
-    const int height = 10;
+    const int width = 60;
+    const int height = 20;
 
     // Вычисляем координаты для центрирования окна
     int start_y = (LINES - height) / 2;
@@ -41,13 +41,10 @@ int gwin(std::vector<std::string> listG)
     int choice = 0;
     while(choice!='3')
     {
-        wattron(win, COLOR_PAIR(1));
+        //wattron(win, COLOR_PAIR(1));
         clear();
        
         mvwprintw(win, 2, 2, "MENU:\n");
-        mvwprintw(win, 4, 2, "1. Open the file\n");
-        mvwprintw(win, 6, 2, "2. Save\n");
-        mvwprintw(win, 8, 2, "3. EXIT\n");
         mvwprintw(win, 4, 2, "1. Open the file\n");
         mvwprintw(win, 6, 2, "2. Save\n");
         mvwprintw(win, 8, 2, "3. EXIT\n");
@@ -70,7 +67,8 @@ int gwin(std::vector<std::string> listG)
         };
         
         mvwprintw(win, 14, 2, "Red TEXT!");
-        wattroff(win, COLOR_PAIR(1));
+        //wattroff(win, COLOR_PAIR(1));
+
         box(win, 0, 0); 
 
         refresh();
