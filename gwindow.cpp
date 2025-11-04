@@ -7,6 +7,8 @@
 #include <string>
 #include <cstring>
 
+#include "buildg.h"
+
 //#include <iostream>
 
 int gwin(std::vector<std::string> listG)
@@ -39,34 +41,59 @@ int gwin(std::vector<std::string> listG)
 
     
     int choice = 0;
-    while(choice!='3')
+    while(choice!='5')
     {
         //wattron(win, COLOR_PAIR(1));
         clear();
        
         mvwprintw(win, 2, 2, "MENU:\n");
-        mvwprintw(win, 4, 2, "1. Open the file\n");
-        mvwprintw(win, 6, 2, "2. Save\n");
-        mvwprintw(win, 8, 2, "3. EXIT\n");
+
+        // listG.push_back("1. Tank");
+        mvwprintw(win, 4, 2, "1. Tank\n");
+
+        // listG.push_back("2. X / 0");
+        mvwprintw(win, 6, 2, "2. X / 0\n");
+
+        // listG.push_back("3. Fly");
+        mvwprintw(win, 8, 2, "3. Fly\n");
+
+        // listG.push_back("4. building a graph");   
+        mvwprintw(win, 10, 2, "4. Building a graph\n");
+
+        // listG.push_back("EXIT");   
+        mvwprintw(win, 12, 2, "5. EXIT\n");
+
         //refresh();
         
-        mvwprintw(win, 10, 2, "Pressed key: \n");
+        mvwprintw(win, 14, 2, "Pressed key: \n");
+
         if (choice=='1')
         {
-            //printw("Item 1 is selected\n");
-            mvwprintw(win, 12, 2, "Item 1 is selected\n");
+            //printw("Tank\n");
+            mvwprintw(win, 16, 2, "Item 1 is selected\n");
         }else if (choice=='2')
         {
-            //printw("Item 2 is selected\n");
-            mvwprintw(win, 12, 2, "Item 2 is selected\n");
+            //printw("X / 0\n");
+            mvwprintw(win, 16, 2, "Item 2 is selected\n");
         }else if (choice=='3')
         {
+            //printw("Fly \n");
+            mvwprintw(win, 16, 2, "Item 3 is selected\n");
+            
+        }else if (choice=='4')
+        {
+            //printw("Graph \n");
+            mvwprintw(win, 16, 2, "Item 4 is selected\n");
+
+        }else if (choice=='5')
+        {
             //printw("EXIT \n");
-            mvwprintw(win, 12, 2, "EXIT \n");
+            mvwprintw(win, 16, 2, "Item 5 is selected\n");
+            
 //        } else{
         };
         
-        mvwprintw(win, 14, 2, "Red TEXT!");
+        // mvwprintw(win, 14, 2, "Red TEXT!");
         //wattroff(win, COLOR_PAIR(1));
 
         box(win, 0, 0); 
@@ -79,6 +106,11 @@ int gwin(std::vector<std::string> listG)
     //getch();
     delwin(win);
     endwin();                    // Выход из curses-режима. Обязательная команда.
+
+    if (choice=='4')
+    {
+        buildg();
+    };    
 
     return 0;
 };
