@@ -84,6 +84,7 @@ int gwin(std::vector<std::string> listG)
         {
             //printw("Graph \n");
             mvwprintw(win, 16, 2, "Item 4 is selected\n");
+            break;
 
         }else if (choice=='5')
         {
