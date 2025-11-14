@@ -9,7 +9,7 @@
 #include <thread>
 #include <chrono>
 
-int welcome()
+int fly()
 {
     // Инициализация ncurses
     if (!initscr()) {
@@ -35,18 +35,15 @@ int welcome()
     box(win, 0, 0);                     // рамка вокруг окна
     
     // Текст для вывода
-    const char *text     = "WELCOME!";
-    const char *subtitle = "My toys.";
-    const char *comment  = "(windows on the ncurses library)";
+    const char *text = "The Game ";
+    const char *subtitle = "is fly.";
 
     // Выводим текст по центру окна
     mvwprintw(win, 2, (width - strlen(text)) / 2, text);
     mvwprintw(win, 4, (width - strlen(subtitle)) / 2, subtitle);    
-    mvwprintw(win, 6, (width - strlen(comment)) / 2, comment);    
     
     wrefresh(win); 
 
-    //getch();
     std::this_thread::sleep_for(std::chrono::seconds(3));
 
     delwin(win);
