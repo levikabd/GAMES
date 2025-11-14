@@ -21,7 +21,8 @@ int buildg()
         sleep(1);
     };
 
-    getch();
+    sleep(3);
+    //getch();
     endwin();
 
     return 0;

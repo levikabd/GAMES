@@ -48,7 +48,6 @@ void outMenu(WINDOW* win)
 
         //refresh();
         
-        mvwprintw(win, 14, 2, "Pressed key: \n");
 };
 
 int selection()
@@ -86,6 +85,7 @@ int selection()
         if (choice=='1')
         {
             //printw("Tank\n");
+            mvwprintw(win, 14, 2, "Pressed key: \n");
             mvwprintw(win, 16, 2, "Item 1 is selected\n");
             box(win, 0, 0); 
             //refresh();
@@ -94,11 +94,14 @@ int selection()
 
             tank();
             choice='0';
+            mvwprintw(win, 14, 2, "  \n");
+            mvwprintw(win, 16, 2, " \n");
             continue;
 
         }else if (choice=='2')
         {
             //printw("X / 0\n");
+            mvwprintw(win, 14, 2, "Pressed key: \n");
             mvwprintw(win, 16, 2, "Item 2 is selected\n");
             box(win, 0, 0); 
             //refresh();
@@ -107,12 +110,15 @@ int selection()
             
             crossZero();
             choice='0';
+            mvwprintw(win, 14, 2, "  \n");
+            mvwprintw(win, 16, 2, " \n");
             continue;
 
 
         }else if (choice=='3')
         {
             //printw("Fly \n");
+            mvwprintw(win, 14, 2, "Pressed key: \n");
             mvwprintw(win, 16, 2, "Item 3 is selected\n");
             box(win, 0, 0); 
             //refresh();
@@ -121,12 +127,15 @@ int selection()
             
             fly();
             choice='0';
+            mvwprintw(win, 14, 2, "  \n");
+            mvwprintw(win, 16, 2, " \n");
             continue;
 
 
         }else if (choice=='4')
         {
             //printw("Graph \n");
+            mvwprintw(win, 14, 2, "Pressed key: \n");
             mvwprintw(win, 16, 2, "Item 4 is selected\n");
             box(win, 0, 0); 
             //refresh();
@@ -135,6 +144,8 @@ int selection()
 
             buildg();
             choice='0';
+            mvwprintw(win, 14, 2, " \n");
+            mvwprintw(win, 16, 2, " \n");
             continue;
 
 
